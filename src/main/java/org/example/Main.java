@@ -85,7 +85,7 @@ class LinkedList{
         }
         this.temp=this.head;
         while(this.temp!=null){
-            l.info("Name :"+this.temp.name+" Phone No:"+this.temp.phoneno+" Email No:"+this.temp.email);
+            l.info("name :"+this.temp.name+" phone No:"+this.temp.phoneno+" email No:"+this.temp.email);
             this.temp=this.temp.ref;
         }
     }
