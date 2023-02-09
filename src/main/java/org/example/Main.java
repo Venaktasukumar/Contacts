@@ -85,7 +85,8 @@ class LinkedList{
         }
         this.temp=this.head;
         while(this.temp!=null){
-            l.info(this.temp.name+" "+this.temp.phoneno+" "+this.temp.email);
+            String q="name: "+this.temp.name+" Phone no: "+this.temp.phoneno+" email: "+this.temp.email;
+            l.info(q);
             this.temp=this.temp.ref;
         }
     }
