@@ -14,12 +14,13 @@ class Node{
     }
 }
 class LinkedList{
-    Logger l= Logger.getLogger("com.api.jar");
+    String x="com.api.jar";
+    Logger l= Logger.getLogger(x);
     Node head=null;
     Node temp=null;
     Node prev=null;
-    public void addElement(String name, String Phoneno, String email){
-        Node newcontact=new Node(name,Phoneno,email);
+    public void addElement(String name, String phoneno, String email){
+        Node newcontact=new Node(name,phoneno,email);
         if(this.head==null){
             this.head=newcontact;
 
@@ -35,7 +36,7 @@ class LinkedList{
     public void deleteElement(String phoneno){
         int flag=0;
         if(this.head==null){
-            l.info("contacts is empty");
+            l.info("Contacts is Empty");
         }
         else if(this.head.phoneno.equals(phoneno)){
             this.head=this.head.ref;
@@ -62,7 +63,7 @@ class LinkedList{
     public void searchElement(String phoneno){
         int flag=0;
         if(this.head==null){
-            l.info("contacts is empty");
+            l.info("Contacts is empty");
             return;
         }
         this.temp=this.head;
@@ -79,7 +80,7 @@ class LinkedList{
     }
     public void printElement(){
         if(this.head==null){
-            l.info("contacts is empty");
+            l.info("contacts is Empty");
             return;
         }
         this.temp=this.head;
@@ -90,7 +91,8 @@ class LinkedList{
     }
 }
 class ContactsOp{
-    Logger l= Logger.getLogger("com.api.jar");
+    String y="com.api.jar";
+    Logger l= Logger.getLogger(y);
     LinkedList[] a=new LinkedList[20];
     public void addContact(String name, String phoneno, String email){
         int index=(Integer.parseInt(String.valueOf(phoneno.charAt(0)))+Integer.parseInt(String.valueOf(phoneno.charAt(phoneno.length()/2))))%10;
@@ -146,12 +148,12 @@ class Contacts{
                     op.addContact(name,phoneno,email);
                     break;
                 case 2:
-                    l.info("Enter your Phonenumber");
+                    l.info("Enter your Phonenumber to delete");
                     String phoneNo=sc.next();
                     op.deleteContact(phoneNo);
                     break;
                 case 3:
-                    l.info("Enter your Phonenumber");
+                    l.info("Enter your Phonenumber to search");
                     String phoneNO=sc.next();
                     op.searchContact(phoneNO);
                     break;
