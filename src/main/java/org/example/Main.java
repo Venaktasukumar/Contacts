@@ -18,7 +18,7 @@ class LinkedList{
     Node head=null;
     Node temp=null;
     Node prev=null;
-    public void addElement(String name, String phoneno, String email){
+    public void addingelement(String name, String phoneno, String email){
         Node newcontact=new Node(name,phoneno,email);
         if(this.head==null){
             this.head=newcontact;
@@ -32,7 +32,7 @@ class LinkedList{
             this.temp.ref=newcontact;
         }
     }
-    public void deleteElement(String phoneno){
+    public void deletingelement(String phoneno){
         int flag=0;
         if(this.head==null){
             l.info("Contacts is Empty");
@@ -59,7 +59,7 @@ class LinkedList{
             l.info("Element is deleted successfully");
         }
     }
-    public void searchElement(String phoneno){
+    public void searchingelement(String phoneno){
         int flag=0;
         if(this.head==null){
             l.info("Contacts is empty");
@@ -78,7 +78,7 @@ class LinkedList{
             l.info("element is not Found");
         }
     }
-    public void printElement(){
+    public void printingelement(){
         if(this.head==null){
             l.info("contacts is Empty");
             return;
@@ -94,35 +94,35 @@ class LinkedList{
 class ContactsOp{
     Logger l= Logger.getLogger("com.api");
     LinkedList[] a=new LinkedList[20];
-    public void addContact(String name, String phoneno, String email){
+    public void addingContact(String name, String phoneno, String email){
         int index=(Integer.parseInt(String.valueOf(phoneno.charAt(0)))+Integer.parseInt(String.valueOf(phoneno.charAt(phoneno.length()/2))))%10;
         if(a[index]==null){
             a[index]=new LinkedList();
         }
-        a[index].addElement(name, phoneno, email);
+        a[index].addingelement(name, phoneno, email);
     }
-    public void deleteContact(String phoneno){
+    public void deletingContact(String phoneno){
         int index=(Integer.parseInt(String.valueOf(phoneno.charAt(0)))+Integer.parseInt(String.valueOf(phoneno.charAt(phoneno.length()/2))))%10;
         if(a[index]==null){
             l.info("Element is not Found");
         }
         else{
-            a[index].deleteElement(phoneno);
+            a[index].deletingelement(phoneno);
         }
     }
-    public void searchContact(String phoneno){
+    public void searchingContact(String phoneno){
         int index=(Integer.parseInt(String.valueOf(phoneno.charAt(0)))+Integer.parseInt(String.valueOf(phoneno.charAt(phoneno.length()/2))))%10;
         if(a[index]==null){
             l.info("element is not found");
         }
         else{
-            a[index].searchElement(phoneno);
+            a[index].searchingelement(phoneno);
         }
     }
-    public void printContact(){
+    public void printingContact(){
         for(int i=0; i<10; i++){
             if(a[i]!=null){
-                a[i].printElement();
+                a[i].printingelement();
             }
         }
     }
@@ -145,20 +145,20 @@ class Contacts{
                     String phoneno=sc.next();
                     l.info("Enter your email");
                     String email=sc.next();
-                    op.addContact(name,phoneno,email);
+                    op.addingContact(name,phoneno,email);
                     break;
                 case 2:
                     l.info("Enter your Phonenumber to delete");
                     String phoneNo=sc.next();
-                    op.deleteContact(phoneNo);
+                    op.deletingContact(phoneNo);
                     break;
                 case 3:
                     l.info("Enter your Phonenumber to search");
                     String phoneNO=sc.next();
-                    op.searchContact(phoneNO);
+                    op.searchingContact(phoneNO);
                     break;
                 case 4:
-                    op.printContact();
+                    op.printingContact();
                     break;
                 case 5:
                     l.info("Exit");
