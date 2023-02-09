@@ -69,7 +69,8 @@ class LinkedList{
         while(this.temp!=null){
             if(this.temp.phoneno.equals(phoneno)){
                 flag=1;
-                l.info("Name :"+this.temp.name+" Phone No:"+this.temp.phoneno+" Email No:"+this.temp.email);
+                String z="Name :"+this.temp.name+" Phone No:"+this.temp.phoneno+" Email No:"+this.temp.email;
+                l.info(z);
             }
             this.temp=this.temp.ref;
         }
