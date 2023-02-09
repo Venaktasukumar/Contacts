@@ -54,7 +54,7 @@ class LinkedList{
             this.temp=this.temp.ref;
         }
         if(flag==0){
-            l.info("element is not found");
+            l.info("Element is not found");
         }
         else{
             l.info("Element is deleted successfully");
@@ -75,7 +75,7 @@ class LinkedList{
             this.temp=this.temp.ref;
         }
         if(flag==0){
-            l.info("element is not found");
+            l.info("element is not Found");
         }
     }
     public void printElement(){
@@ -104,7 +104,7 @@ class ContactsOp{
     public void deleteContact(String phoneno){
         int index=(Integer.parseInt(String.valueOf(phoneno.charAt(0)))+Integer.parseInt(String.valueOf(phoneno.charAt(phoneno.length()/2))))%10;
         if(a[index]==null){
-            l.info("element is not found");
+            l.info("Element is not Found");
         }
         else{
             a[index].deleteElement(phoneno);
