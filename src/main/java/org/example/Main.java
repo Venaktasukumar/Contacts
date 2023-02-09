@@ -14,8 +14,7 @@ class Node{
     }
 }
 class LinkedList{
-    String x="com.api.jar";
-    Logger l= Logger.getLogger(x);
+    Logger l= Logger.getLogger("com");
     Node head=null;
     Node temp=null;
     Node prev=null;
@@ -85,14 +84,13 @@ class LinkedList{
         }
         this.temp=this.head;
         while(this.temp!=null){
-            l.info("name :"+this.temp.name+" phone No:"+this.temp.phoneno+" email No:"+this.temp.email);
+            l.info(this.temp.name+" "+this.temp.phoneno+" "+this.temp.email);
             this.temp=this.temp.ref;
         }
     }
 }
 class ContactsOp{
-    String y="com.api.jar";
-    Logger l= Logger.getLogger(y);
+    Logger l= Logger.getLogger("com.api");
     LinkedList[] a=new LinkedList[20];
     public void addContact(String name, String phoneno, String email){
         int index=(Integer.parseInt(String.valueOf(phoneno.charAt(0)))+Integer.parseInt(String.valueOf(phoneno.charAt(phoneno.length()/2))))%10;
