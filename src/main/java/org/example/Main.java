@@ -120,7 +120,7 @@ class ContactsOp{
         }
     }
     public void printingContact(){
-        for(int i=0; i<10; i++){
+        for(int i=0; i<20; i++){
             if(a[i]!=null){
                 a[i].printingelement();
             }
