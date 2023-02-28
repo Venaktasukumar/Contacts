@@ -29,21 +29,24 @@ class LinkedL {
         } else if (this.head.phoneno.equals(phoneno)) {
             this.head = this.head.ref;
             flag = 1;
-            return;
         }
-        this.temp = this.head;
-        this.prev = null;
-        while (this.temp != null) {
-            if (this.temp.phoneno.equals(phoneno)) {
-                this.prev.ref = temp.ref;
-                flag = 1;
+        else {
+            this.temp = this.head;
+            this.prev = null;
+            while (this.temp != null) {
+                if (this.temp.phoneno.equals(phoneno)) {
+                    this.prev.ref = temp.ref;
+                    flag = 1;
+                    break;
+                }
+                this.prev = this.temp;
+                this.temp = this.temp.ref;
             }
-            this.prev = this.temp;
-            this.temp = this.temp.ref;
         }
         if (flag == 0) {
             l.info("Element is not found");
-        } else {
+        }
+        else {
             l.info("Element is deleted successfully");
         }
     }
