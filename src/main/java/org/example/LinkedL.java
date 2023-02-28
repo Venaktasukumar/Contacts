@@ -63,6 +63,7 @@ class LinkedL {
                 flag = 1;
                 String z = "Name :" + this.temp.name + " Phone No:" + this.temp.phoneno + " Email No:" + this.temp.email;
                 l.info(z);
+                break;
             }
             this.temp = this.temp.ref;
         }
